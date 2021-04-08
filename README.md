@@ -20,11 +20,11 @@ For the following functions, fill in the table with the types of the inputs and 
 
 | Function                                         | types of inputs                  | type of output                |
 | ------------------------------------------------ | -------------------------------- | ----------------------------- |
-| `function addFive(number) { return number + 5}`  |                                  |                               |
-| `function sum(A, B) { return A + B }`            |                                  |                               |
-| `function concat(A, B) { return "" + A + B }`    |                                  |                               |
-| `document.querySelector`                         |                                  |                               |
-| `window.fetch`                                   |                                  |                               |
+| `function addFive(number) { return number + 5}`  | number                           |  number                       |
+| `function sum(A, B) { return A + B }`            | number, number                   |  number, number               |
+| `function concat(A, B) { return "" + A + B }`    | strings and number               |  string                       |
+| `document.querySelector`                         | string                           |  undefiend? String            |
+| `window.fetch`                                   | object                           |  object                       |
 
 ### "Shapes" of `Object`s
 
@@ -77,11 +77,11 @@ Fill in the table using the 'shape' shorthand
 
 | Function      | types of inputs                  | type of output           |
 | ------------- | -------------------------------- | ------------------------ |
-| `getName`     |                                  |                          |
-| `getAge`      |                                  |                          |
-| `makePerson`  |                                  |                          |
-| `birthday`    |                                  |                          |
-| `getDistance` |                                  |                          |
+| `getName`     | object                           |   string                 |
+| `getAge`      | object                           |   number                 |
+| `makePerson`  | string, number                   |   object                 |
+| `birthday`    | object                           |   object                 |
+| `getDistance` | object                           |   object                 |
 
 ### Function Signatures
 
@@ -101,11 +101,11 @@ For practice, add the function signature to the functions in the table.
 
 | Function      | types of inputs            | type of output             | function signature |
 | ------------- | -------------------------- | -------------------------- | ------------------ |
-| `getName`     |                            |                            |                    |
-| `getAge`      |                            |                            |                    |
-| `makePerson`  |                            |                            |                    |
-| `birthday`    |                            |                            |                    |
-| `getDistance` |                            |                            |                    |
+| `getName`     |                            |                            |  getName(person:object):string                  |
+| `getAge`      |                            |                            |  getAge(person:object):number                  |
+| `makePerson`  |                            |                            |makePerson(name:string, age:number):object                  |
+| `birthday`    |                            |                            |birthday(person:object):object                    |
+| `getDistance` |                            |                            |getDistance(pointA:object, pointB:object):number                    |
 
 ### Operators as 'Functions'
 
@@ -116,13 +116,13 @@ For the following operators, fill in the types of the inputs and outputs. Follow
 | Operator   | types of inputs                  | type of output                | function signature                     |
 | ---------- | -------------------------------- | ----------------------------- | -------------------------------------- |
 | \*         | number, number                   | number                        | multiply(a: number, b: number): number |
-| + (string) |                                  |                               |                                        |
-| + (number) |                                  |                               |                                        |
-| -          |                                  |                               |                                        |
-| ^          |                                  |                               |                                        |
-| \*\*       |                                  |                               |                                        |
-| \|\|       |                                  |                               |                                        |
-| &&         |                                  |                               |                                        |
+| + (string) | string, string                   | string                        | addString(a: string,b:string): string                                       |
+| + (number) | number, number                   | number                        | addNumber(a: number, b: number): number |
+| -          | number, number                   | number                        | subtract(a: number, b: number): number |                                 |                               
+| ^          | number, number                   | number                        | exp(a: number, b: number): number      | 
+| \*\*       | number, number                   | number                        | exp(a: number, b: number): number      |
+| \|\|       | anything, anything               | anything                      | or(a: anything, b: anything): anything                                       |
+| &&         |anything, anything               | anything                      | and(a: anything, b: anything): anything
 
 ### Functions that take in functions as arguments
 
@@ -135,8 +135,8 @@ Fill in the rest of the table.
 | Function                       | types of inputs                  | type of output                | function signature                                      |
 | ------------------------------ | -------------------------------- | ----------------------------- | ------------------------------------------------------- |
 | `EventTarget.addEventListener` | string, handler(e: Event): void  | void                          | addEventListener(type: string, handler: function): void |
-| `window.setTimeout`            |                                  |                               |                                                        |
-| `Array.prototype.map`          |                                  |                               |                                                        |
-| `Array.prototype.find`         |                                  |                               |                                                         |
+| `window.setTimeout`            | string, function(): anything     | anything                      | window.setTimeout(a: string, function: function):anythin                                                       |
+| `Array.prototype.map`          | object, string, function(antyhing):anything                  | object                       | Array.prototype.map(array:object, prototype:string, function: function):object                                                       |
+| `Array.prototype.find`         | object, string, test(antyhing):boolean | anything                | Array.prototype.find(a: Array: object, prototype: string, test: function): anything                                                        |
 | `Array.prototype.filter`       |                                  |                               |                                                         |
 | `Array.prototype.reduce`       |                                  |                               |                                                         |
